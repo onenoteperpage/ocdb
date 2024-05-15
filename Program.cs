@@ -8,7 +8,9 @@ namespace ocdb
         {
             string connectionString = "User Id=dbadmin;Password=db_password;Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=rds_hostname.rds.amazonaws.com)(PORT=1521)))(CONNECT_Data=(SID=ORCL)));";
 
-            string sql = @"SELECT username FROM dba_users";
+            string sql = @"
+                SELECT username FROM dba_users;
+                ";
 
             using (OracleConnection connection = new OracleConnection(connectionString))
             {
